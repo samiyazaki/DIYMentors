@@ -1,30 +1,39 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 const LoginForm = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-        try {
-            const response = await axios.post('/api/auth/login', {email, password});
-        } catch (error) {
+    // Perform the login request here
+    try {
+      const response = await axios.post('/api/auth/login', { email, password });
+      // Handle the response (e.g., store the user information or JWT in state/localStorage)
+    } catch (error) {
+      // Handle the error (e.g., display an error message)
+    }
+  };
 
-        }
-    };
+  return (
+    <div className="container">
+      <form onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label>Email:</label>
+          <input className="form-control" type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        </div>
 
-    return (
-        <form onSubmit={handleSubmit}>
-              <label>Email:</label>
-              <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        
-              <label>Password:</label>
-              <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        
-              <button type="submit">Login</button>
-            </form>
-          );
-}
+        <div className="form-group">
+          <label>Password:</label>
+          <input className="form-control" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        </div>
+
+        <button className="btn btn-primary" type="submit">Login</button>
+      </form>
+    </div>
+  );
+};
+
 export default LoginForm;
