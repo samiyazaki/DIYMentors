@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 const userRoutes = require('./routes/user');
 const authRoutes = require('./routes/auth');
+const postRoutes = require('./routes/post');
+const solutionRoutes = require('./routes/solution');
+const commentRoutes = require('./routes/comment');
+
 
 app.use(express.json());
 app.use('/api/users', userRoutes);
