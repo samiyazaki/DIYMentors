@@ -36,3 +36,48 @@
     transform: rotate(360deg);
   }
 }
+body {
+  background: #f0f2f5;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  color: #385898;
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: #3b5998;
+  color: #fff;
+}
+
+.navbar a {
+  color: #fff;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1em;
+  padding: 1em;
+}
+
+.button {
+  background-color: #4267b2;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  cursor: pointer;
+  padding: 0.5em 1em;
+}
+
+.button:hover {
+  background-color: #385898;
+}

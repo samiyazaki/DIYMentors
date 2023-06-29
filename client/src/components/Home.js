@@ -1,14 +1,14 @@
 import React from 'react';
-import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className="home">
-      <Navbar />
+    <div className="container">
       <h1>Welcome to DIY Pro</h1>
-      <p>Explore and create your own DIY projects with our community.</p>
+      <p>The social media site for DIY enthusiasts!</p>
+      <Link to="/posts" className="button">See all posts</Link>
     </div>
   );
-};
+}
 
 export default Home;
