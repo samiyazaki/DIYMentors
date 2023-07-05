@@ -1,13 +1,23 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
 const Post = ({ post }) => {
+  if (!post) {
+    return <div>Loading...</div>;
+  }
+
   return (
-    <div className="post">
+    <div className="card">
       <h2>{post.title}</h2>
-      <p>{post.content}</p>
-      <p>Posted by: {post.author}</p>
+      <p>{post.body}</p>
     </div>
   );
+}
+
+Post.propTypes = {
+  post: PropTypes.shape({
+    title: PropTypes.string,
+    body: PropTypes.string,
+  }),
 };
 
 export default Post;
