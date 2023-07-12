@@ -8,11 +8,14 @@ const LoginForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Perform the login request here
     try {
       const response = await axios.post('/api/auth/login', { email, password });
-      // Handle the response (e.g., store the user information or JWT in state/localStorage)
+      if(response.data) {
+        console.log(response.data);
+        // Handle the response (e.g., store the user information or JWT in state/localStorage)
+      }
     } catch (error) {
+      console.error(error);
       // Handle the error (e.g., display an error message)
     }
   };

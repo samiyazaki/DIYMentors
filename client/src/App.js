@@ -6,6 +6,8 @@ import Post from './components/Post';
 import PostList from './components/PostList';
 import SolutionForm from './components/SolutionForm';
 import SolutionList from './components/SolutionList';
+import LoginForm from './components/LoginForm'; // Import this
+import RegisterForm from './components/RegisterForm'; // Import this
 
 import './App.css';
 
@@ -20,6 +22,8 @@ function App() {
           <Route path='/posts-list' element={<PostList />} />
           <Route path='/solution-form' element={<SolutionForm />} />
           <Route path='/solutions' element={<SolutionList />} />
+          <Route path='/login' element={<LoginForm />} /> {/* Add this */}
+          <Route path='/register' element={<RegisterForm />} /> {/* Add this */}
         </Routes>
       </div>
     </Router>
